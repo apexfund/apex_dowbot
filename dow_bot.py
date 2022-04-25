@@ -58,8 +58,8 @@ def findMovingAverage(ticker, amountOfDays):
   # Reverses the data frame.
   df.iloc[::-1]
 
-  firstDay = str(df.index[0])[:10]
-  finalDay = str(df.index[amountOfDays -1])[:10]
+  firstDay = str(df.index[-amountOfDays - 1])[:10]
+  finalDay = str(df.index[-1])[:10]
 
   movingAverage = df['Close'].loc[firstDay : finalDay].mean()
   return movingAverage
